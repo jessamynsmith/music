@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.conf.urls import url
 
+from . import views
 
-def index(request):
-    return render(request, "core/index.html")
+urlpatterns = [
+    url(r'^$', views.index, name="index"),
+]
