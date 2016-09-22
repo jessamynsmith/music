@@ -23,6 +23,6 @@ def artist_detail(request, id):
         "artist": artist,
     }
 
-    return render (request, "artists/artist_detail.html, context")
+    return render (request, "artists/artist_detail.html", context)
 
 
