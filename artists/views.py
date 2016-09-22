@@ -10,7 +10,19 @@ def artist_list(request):
     context = {
         "artists": artists,
     }
-    return HttpResponse("Here be I.")
-    # return render (request, "artists/index.html", context)
+    # return HttpResponse("Here be I.")
+    return render (request, "artists/index.html", context)
+
+
+
+
+def artist_detail(request, id):
+    artist = get_object_or_404(Artist, pk=id)
+
+    context = {
+        "artist": artist,
+    }
+
+    return render (request, "artists/artist_detail.html, context")
 
 
