@@ -7,6 +7,8 @@
         </h1>
         <p>A complete list of all artists.</p>
     </div>
+        
+
         {% for artist in artists %}
             <p>
                 <a href="{{artist.pk}}">
@@ -15,6 +17,13 @@
             </p>
 
         {% endfor %}
+        
+    <hr>
+    <p>
+        <a href="{% url 'artists:artist_new' %}" class="btn btn-primary btn-block btn-lg">
+        Add a new artist.
+        </a>
 
+    </p>
 
 {% endblock content %}
