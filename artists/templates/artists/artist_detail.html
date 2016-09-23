@@ -2,6 +2,13 @@
 
 {% block content %}
     <h2>
+        <div class="pull-right">
+            <a href="{% url 'artists:artist_edit' artist.pk %}">
+                <i class="fa fa-pencil-square"></i>
+            </a>
+        </div>
+
+
         {{artist.name}}
     </h2>
 {% endblock content %}      
