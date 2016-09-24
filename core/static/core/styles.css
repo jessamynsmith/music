@@ -4,15 +4,23 @@ body{
 }
 
 .page-footer {
-    position: fixed;
-    bottom: 0;
     background-color: #fff;
     width: 100%;
 }
 
-.jumbotron-index {
+.content {
     text-align: center;
-    background-color: ##FFF7EE;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 10px 0 20px 0;
+}
+
+.input_form {
+    width: 40%;
+    margin: auto;
+}
+.input_form button {
+    margin-top: 10px;
 }
 
 .information_list {

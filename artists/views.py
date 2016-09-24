@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 
 from .models import Artist
 from .forms import ArtistForm
@@ -10,6 +11,13 @@ from .forms import ArtistForm
 def artist_list(request):
 
     artists = Artist.objects.all()
+
+    query = request.GET.get("q")
+    if query:
+        artists = artists.filter(
+            Q(name__icontains=query)
+        )
+        artists = artists.distinct()
 
     context = {
         "artists": artists,

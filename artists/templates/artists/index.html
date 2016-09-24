@@ -5,23 +5,24 @@
         <h1>
             Artists
         </h1>
-        <p>A complete list of all artists.</p>
-        
+       
         <hr>
 
-        {% for artist in artists %}
-            <p>
-                <a href="{{artist.pk}}">
-                    {{artist.name}}                                
-                </a>
-            </p>
-        {% endfor %}
-            
+        {% if artists %}
+            {% for artist in artists %}
+                {% include "artists/_artist_thumbnail.html" %}
+            {% endfor %}
+        {% else %}
+            <p>No artists found.</p>
+        {% endif %}
+      
         <hr>
-     
-        <a href="{% url 'artists:artist_new' %}" class="btn btn-primary btn-block btn-lg">
-            Add a new artist.
-        </a>
+        
+        <div class="input_form">
+            <a href="{% url 'artists:artist_new' %}" class="btn btn-primary btn-block">
+                Add a new artist.
+            </a>            
+        </div>
 
     </div>
 
