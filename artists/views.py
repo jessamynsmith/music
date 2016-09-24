@@ -18,8 +18,6 @@ def artist_list(request):
     return render (request, "artists/index.html", context)
 
 
-
-
 def artist_detail(request, id):
     artist = get_object_or_404(Artist, pk=id)
 
@@ -66,7 +64,19 @@ def artist_edit(request, id):
         "artist": artist,
     }
 
-    return rencer(request, "artists/artist_edit.html", context)
+    return render(request, "artists/artist_edit.html", context)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

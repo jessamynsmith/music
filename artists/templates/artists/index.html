@@ -1,13 +1,13 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-    <div class="jumbotron jumbotron-index">
+    <div class = "information_list">
         <h1>
             Artists
         </h1>
         <p>A complete list of all artists.</p>
-    </div>
         
+        <hr>
 
         {% for artist in artists %}
             <p>
@@ -15,15 +15,14 @@
                     {{artist.name}}                                
                 </a>
             </p>
-
         {% endfor %}
-        
-    <hr>
- 
-    <a href="{% url 'artists:artist_new' %}" class="btn btn-primary btn-block btn-lg">
-        Add a new artist.
-    </a>
+            
+        <hr>
+     
+        <a href="{% url 'artists:artist_new' %}" class="btn btn-primary btn-block btn-lg">
+            Add a new artist.
+        </a>
 
-
+    </div>
 
 {% endblock content %}

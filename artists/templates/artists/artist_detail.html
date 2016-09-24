@@ -1,16 +1,18 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-    <h2>
-        <div class="pull-right">
-            <a href="{% url 'artists:artist_edit' artist.pk %}">
-                <i class="fa fa-pencil-square"></i>
-            </a>
-        </div>
-
-
-        {{artist.name}}
-    </h2>
+    <div class="information_list">
+        <h2>
+            <div class="pull-right">
+                <a href="{% url 'artists:artist_edit' artist.pk %}">
+                    <i class="fa fa-pencil-square"></i>
+                </a>
+            </div>
+            
+            {{artist.name}}
+            <hr>
+        </h2>        
+    </div>
 {% endblock content %}      
 
 
