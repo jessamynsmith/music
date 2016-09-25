@@ -1,27 +1,25 @@
 from django.shortcuts import render, get_object_or_404
-from django.db.models import Count
 from django.core.urlresolvers import reverse
 from . models import Album
-import django.http import HttpResponse
+from django.http import HttpResponse
 
 
-def album_details(request, id):
-    album_details = get_object_or_404(Album, pk=id)
-        album_details = Album.objects.all()
-
+def album_list(request):
+    albums = Album.objects.all()
+    
     context = {
-        "album_details": album_details
+        "albums":album_list
 
     }
 
-    return render(request, "album/album_detail.html", context)
+    return render(request, "albums.album_list.html", context)
 
 def album_list(request):
     album_list = get_object_or_404(Album, pk=id)
-    album = Album.objects.all()
+    album_list = Album.objects.all()
 
     context = {
-        "album_lst":album_list,
+        "albom'":album_details
 
     }
 
