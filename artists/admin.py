@@ -8,3 +8,4 @@ class ArtistAdmin (admin.ModelAdmin):
     )
 
 admin.site.register(Artist, ArtistAdmin)
+
