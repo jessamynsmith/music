@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    <div class = "information_list">
+        <h1>
+            Albums
+        </h1>
+       
+        <hr>
+
+        {% if album %}
+            {% for album in albums %}
+                {% include "album/_album_thumbnail.html" %}
+            {% endfor %}
+        {% else %}
+            <p>No Albums found.</p>
+        {% endif %}
+      
+        <hr>
+        
+       
+    </div>
+
+{% endblock content %}

@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 from datetime import datetime
 
 class Album(models.Model):
@@ -11,8 +11,8 @@ class Album(models.Model):
     default='draft'
 
     class Meta:
-         ordering = ('album_name', 'artist_name')
+         ordering = ['artist_name', 'album_name', 'collection_or_greatest_hits', 'studio_or_live', 'year_released']
     def __str__(self):
         return self.title
     def get_absolute_url(self):
-        return reverse("album:album_details", args=[self.p])
+        return reverse("album:album_list", kwargs={self.pk})
