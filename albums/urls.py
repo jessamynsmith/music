@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from . import views
 
-urlpatters =[
+urlpatterns = [
     url(r'^$', views.album_list, name="album_list"),
     #url(r'^(?P<id>\d+)/$', views.album_details, name="album_details"
 ]
