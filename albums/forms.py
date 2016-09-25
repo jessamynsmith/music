@@ -1,12 +1,12 @@
 from django import forms
 
-from .models import Album,
+from .models import Album
 
 class AlbumForm(forms.ModelForm):
 
     class Meta:
-        model = Artist
-        fields = ("name",)
+        model = Album
+        fields = ("album_name",)
         model = Album
         fields = ("album_name")
         model = Album
@@ -19,7 +19,7 @@ class AlbumForm(forms.ModelForm):
     def __init__ (self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields["name"].widget.attrs.update({
+        self.fields["album_name"].widget.attrs.update({
             "class":"form-control",
 
         self.fields["album_name"].widget.attrs.update({
